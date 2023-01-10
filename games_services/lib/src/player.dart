@@ -18,6 +18,11 @@ abstract class Player {
     return await GamesServicesPlatform.instance.getPlayerID();
   }
 
+  /// Get the player token id.
+  static Future<String?> getPlayerToken() async {
+    return await GamesServicesPlatform.instance.getPlayerToken();
+  }
+
   /// Get the player name.
   /// On iOS the player alias is the name used by the Player visible in the leaderboard
   static Future<String?> getPlayerName() async {

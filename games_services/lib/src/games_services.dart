@@ -100,6 +100,11 @@ class GamesServices {
     return await Player.getPlayerID();
   }
 
+  /// Get the player token id.
+  static Future<String?> getPlayerToken() async {
+    return await Player.getPlayerToken();
+  }
+
   /// Get player score for a specific leaderboard.
   static Future<int?> getPlayerScore(
       {iOSLeaderboardID = "", androidLeaderboardID = ""}) async {

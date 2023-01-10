@@ -63,10 +63,14 @@ class Auth : PluginRegistry.ActivityResultListener {
 
   private fun explicitSignIn(activity: Activity?, shouldEnableSavedGame: Boolean) {
     activity ?: return
+    val webClientIdIdentifier: Int = activity
+      .resources
+      .getIdentifier("default_web_client_id", "string", activity.packageName)
+    val serverClientId = activity.getString(webClientIdIdentifier)
     val signInOption = GoogleSignInOptions.Builder(
       GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN
     )
-      .requestEmail()
+      .requestIdToken(serverClientId)
 
     if (shouldEnableSavedGame) {
       signInOption

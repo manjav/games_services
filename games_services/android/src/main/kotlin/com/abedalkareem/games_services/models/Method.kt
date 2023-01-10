@@ -2,7 +2,7 @@ package com.abedalkareem.games_services.models
 
 enum class Method {
   Unlock, Increment, SubmitScore, ShowLeaderboards, ShowAchievements,
-  LoadAchievements, SilentSignIn, IsSignedIn, GetPlayerID, GetPlayerName,
+  LoadAchievements, SilentSignIn, IsSignedIn, GetPlayerID, GetPlayerToken, GetPlayerName,
   GetPlayerScore, SignOut, SaveGame, LoadGame, GetSavedGames, DeleteGame,
   LoadLeaderboardScores
 }

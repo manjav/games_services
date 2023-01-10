@@ -20,6 +20,16 @@ class Player {
       }
   }
 
+  fun getPlayerToken(activity: Activity?, result: MethodChannel.Result) {
+    activity ?: return
+    val lastSignedInAccount = GoogleSignIn.getLastSignedInAccount(activity) ?: return
+    if (lastSignedInAccount.idToken != null) {
+      result.success(lastSignedInAccount.idToken)
+    } else {
+      result.error(PluginError.FailedToGetPlayerId.errorCode(), "Player token not found.", null)
+    }
+  }
+
   fun getPlayerName(activity: Activity?, result: MethodChannel.Result) {
     activity ?: return
     val lastSignedInAccount = GoogleSignIn.getLastSignedInAccount(activity) ?: return

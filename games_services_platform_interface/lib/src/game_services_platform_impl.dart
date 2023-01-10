@@ -141,6 +141,11 @@ class MethodChannelGamesServices extends GamesServicesPlatform {
   }
 
   @override
+  Future<String?> getPlayerToken() async {
+    return await _channel.invokeMethod("getPlayerToken");
+  }
+
+  @override
   Future<String?> getPlayerName() async {
     return await _channel.invokeMethod("getPlayerName");
   }

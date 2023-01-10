@@ -143,6 +143,9 @@ class GamesServicesPlugin : FlutterPlugin,
       Method.GetPlayerID -> {
         player?.getPlayerID(activity, result)
       }
+      Method.GetPlayerToken -> {
+        player?.getPlayerToken(activity, result)
+      }
       Method.GetPlayerName -> {
         player?.getPlayerName(activity, result)
       }
